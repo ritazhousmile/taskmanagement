@@ -1,8 +1,9 @@
-// 2. src/main/java/com/example/taskmanagement/model/Task.java
+// src/main/java/com/example/taskmanagement/model/Task.java
 package com.example.taskmanagement.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +17,10 @@ public class Task {
     private String title;
     private String description;
     private String status;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime dueDate;
+    
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     
